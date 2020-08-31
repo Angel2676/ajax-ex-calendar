@@ -1,0 +1,19 @@
+.container{
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+h1 {
+    display: inline-block;
+}
+
+
+
+#prev{
+    display: inline-block;
+}
+
+#next {
+    display: inline-block
+}
