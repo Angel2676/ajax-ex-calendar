@@ -15,7 +15,6 @@
             <button id="prev"type="button" name="button"> << </button>
             <!-- data è un attributo e this data è il valore -->
             <h1 class="month" data-this-date="2018-01-01"></h1>
-
             <span class="month"></span>
             <span class="year"></span>
             <button id="next"type="button" name="button"> >> </button>
@@ -24,7 +23,7 @@
         </div>
 
         <script id="day-template" type="text/x-handlebars-template">
-            <li data-complete-date '{{completeDate}}'> {{day}}
+            <li data-complete-date='{{completeDate}}'>{{day}}
                 {{month}}</li>
         </script>
 

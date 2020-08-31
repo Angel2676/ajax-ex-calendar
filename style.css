@@ -17,3 +17,7 @@ h1 {
 #next {
     display: inline-block
 }
+
+.holiday {
+    color: red;
+}

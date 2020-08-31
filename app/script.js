@@ -2,9 +2,26 @@
 
 
 $(document).ready(function(){
+
+
+$("#next").click(function(){
+    var newDate = moment().add(1,"months");
+    var dataT = $("h1").attr("data-this-date", newDate);
+    insertDays(dataT);
+    insertHolidays(dataT);
+    console.log(dataT);
+
+})
+
+
+
+
+
+
 // data di partenza
 // creaiamo un oggetto moment su data di partenza
 var dataCorrente = moment("2018-01-01");
+// console.log(dataCorrente);
 insertDays(dataCorrente);
 insertHolidays(dataCorrente);
 
@@ -66,16 +83,16 @@ function insertHolidays(data) {
                 month:data.month()
             },
             success: function(risposta){
-                console.log(risposta.response);
+                // console.log(risposta.response);
                 for (var i = 0; i < risposta.response.length; i++) {
-                    var listItem = $('li[data-complete-date="'+ risposta.response[i].date + '" ]');
-                    listItem.append(risposta.response[i].name);
-                    // listItem.addClass("holiday")
+                    var listItem = $('li[data-complete-date="'+ risposta.response[i].date + '"]');
+                    listItem.append("-" + risposta.response[i].name);
+                    listItem.addClass("holiday")
                 }
 
             },
             error: function(){
-                alert("ERRORE")
+                alert("errore")
             }
         }
     );
