@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="it" dir="ltr">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script> 
-        <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendario di Gennaio 2018</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     </head>
     <body>
         <div class="container">
-            <button id="prev"type="button" name="button"> << </button>
-            <!-- data è un attributo e this data è il valore -->
-            <h1 class="month" data-this-date="2018-01-01"></h1>
-            <span class="month"></span>
-            <span class="year"></span>
-            <button id="next"type="button" name="button"> >> </button>
-            <!-- sara creata tramite handelbars -->
-            <ul class="month-list"></ul>
+            <div class="header">
+                <button id="prev"><<</button>
+                <h1 id="mese" data-partenza="2018-01-01"></h1> <!-- l'attributo data type serve per cambiarlo lato js-->
+                <button id="next">>></button>
+            </div>
+            <div>
+                <ul id="calendario">
+
+                </ul>
+            </div>
         </div>
 
-        <script id="day-template" type="text/x-handlebars-template">
-            <li data-complete-date='{{completeDate}}'>{{day}}
-                {{month}}</li>
+        <script id="entry-template" type="text/x-handlebars-template">
+          <li data-completa="{{dataCompleta}}">
+              {{giorno}} {{mese}}
+          </li>
         </script>
 
-    <script src="app/script.js" charset="utf-8"></script>
+        <script src="app\script.js" charset="utf-8"></script>
     </body>
 </html>

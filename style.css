@@ -1,23 +1,43 @@
-.container{
-    margin: 0 auto;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#mese {
+    font-size: 25px;
+    margin: 10px auto;
+}
+
+.container {
     text-align: center;
+    margin: 100px auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
 
 }
 
-h1 {
-    display: inline-block;
+#calendario {
+    width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+#calendario li{
+    list-style:none;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+
 }
 
 
-
-#prev{
-    display: inline-block;
-}
-
-#next {
-    display: inline-block
-}
-
-.holiday {
+.festa {
     color: red;
 }
